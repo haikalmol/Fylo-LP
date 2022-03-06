@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $ff-primary;
+  background: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $ff-secondary;
+}
+
+a,
+input,
+button {
+  &:focus {
+    outline-offset: 5px;
+    outline: 2px dashed transparentize($c-cyan-moderate, 0.5);
+  }
+}

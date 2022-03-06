@@ -1,0 +1,145 @@
+.footer {
+  background: $c-blue-very-dark;
+
+  &__container {
+    padding: 80px 38px 48px 38px;
+
+    @include breakpoint("lg") {
+      padding: 109px 40px 48px 40px;
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo {
+    margin-left: 3px;
+    margin-bottom: 41px;
+
+    @include breakpoint("lg") {
+      margin-bottom: 22px;
+    }
+
+    img {
+      width: 171px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+
+    @include breakpoint("md") {
+      flex-flow: row;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 48px;
+    color: #fff;
+
+    @include breakpoint("md") {
+      flex: 1;
+    }
+
+    @include breakpoint("lg") {
+      max-width: 444px;
+    }
+  }
+
+  &__contact-item {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__contact-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  &__contact-link {
+    text-decoration: none;
+    color: #fff;
+    font-style: normal;
+  }
+
+  &__nav {
+    margin-bottom: 48px;
+
+    @include breakpoint("md") {
+      flex: 1;
+    }
+
+    @include breakpoint("lg") {
+      max-width: 523px;
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+
+    @include breakpoint("md") {
+      columns: 2;
+    }
+  }
+
+  &__nav-item {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 250ms linear;
+
+    &:hover {
+      color: $c-blue-bright;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint("lg") {
+      margin-left: 14px;
+    }
+  }
+
+  &__socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    transition: color 250ms linear, border-color 250ms linear;
+
+    &:hover {
+      color: $c-blue-bright;
+      border-color: $c-blue-bright;
+      animation: socials-hover 250ms ease-in;
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+
+      @include breakpoint("lg") {
+        margin-right: 16px;
+      }
+    }
+  }
+}

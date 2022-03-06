@@ -1,0 +1,144 @@
+.signin {
+  $root: &;
+  background: $c-blue-desaturated;
+
+  &.active {
+    #{$root}__content {
+      animation: signin-content-slide 1000ms ease-in forwards;
+    }
+
+    #{$root}__form {
+      animation: signin-form-slide 1000ms ease-in forwards;
+    }
+  }
+  &__container {
+    padding: 54px 37px;
+
+    @include breakpoint("md") {
+      display: flex;
+    }
+
+    @include breakpoint("lg") {
+      padding: 105px 40px 85px 40px;
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    opacity: 0;
+    text-align: center;
+
+    @include breakpoint("md") {
+      flex-basis: 50%;
+      text-align: left;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 19px;
+
+    @include breakpoint("lg") {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__text {
+    max-width: 530px;
+    margin: 0 auto 23px auto;
+
+    @include breakpoint("lg") {
+      max-width: 500px;
+      margin: 0;
+    }
+  }
+
+  &__form {
+    opacity: 0;
+    position: relative;
+    max-width: 270px;
+    margin: 0 auto;
+
+    @include breakpoint("sm") {
+      max-width: 350px;
+    }
+
+    @include breakpoint("md") {
+      flex-basis: 50%;
+      max-width: unset;
+      padding-left: 30px;
+    }
+
+    @include breakpoint("lg") {
+      padding-left: 119px;
+    }
+
+    &.active {
+      #{$root}__input {
+        border: 1px solid tomato;
+      }
+
+      #{$root}__form-error {
+        visibility: visible;
+        height: 20px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        animation: error-shake 250ms ease-in;
+
+        @include breakpoint("lg") {
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+
+  &__input {
+    height: 35px;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: none;
+    padding-left: 10px;
+
+    @include breakpoint("sm") {
+      height: 40px;
+      margin-top: 7px;
+      margin-bottom: 10px;
+    }
+
+    @include breakpoint("md") {
+      padding-left: 20px;
+    }
+
+    @include breakpoint("lg") {
+      height: 48px;
+      margin-bottom: 16px;
+      max-width: 482px;
+    }
+
+    &::placeholder {
+      font-size: 0.75rem;
+      color: $c-gray-light;
+    }
+
+    &:invalid {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  &__form-error {
+    visibility: hidden;
+    display: block;
+    height: 0;
+    font-size: 0.8rem;
+    text-align: center;
+    color: tomato;
+    transform-origin: left;
+
+    @include breakpoint("md") {
+      margin-left: 10px;
+      text-align: left;
+    }
+  }
+}

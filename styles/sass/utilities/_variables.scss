@@ -1,0 +1,18 @@
+/* Colors */
+$c-blue-very-dark: hsl(243, 87%, 12%);
+$c-blue-desaturated: hsl(238, 22%, 44%);
+$c-blue-bright: hsl(224, 93%, 58%);
+$c-blue-grayish-light: #f8f8fe;
+$c-cyan-moderate: hsl(170, 45%, 43%);
+$c-gray-light: hsl(0, 0%, 75%);
+
+/* Fonts */
+$ff-primary: "Open Sans", sans-serif;
+$ff-secondary: "Raleway", sans-serif;
+
+/* Media query breakpoints */
+$breakpoints: (
+  "sm": 481px,
+  "md": 769px,
+  "lg": 1025px,
+);

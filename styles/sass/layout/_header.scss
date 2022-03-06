@@ -1,0 +1,108 @@
+.header {
+  $root: &;
+  margin-bottom: 67px;
+
+  @include breakpoint("lg") {
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 25px;
+
+    @include breakpoint("lg") {
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 66px 30px;
+    }
+  }
+
+  &__logo {
+    animation: header-logo-scale 1000ms ease-in;
+
+    img {
+      display: block;
+      width: 78px;
+
+      @include breakpoint("sm") {
+        width: 100px;
+      }
+
+      @include breakpoint("md") {
+        width: 80%;
+      }
+
+      @include breakpoint("lg") {
+        width: 100%;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    animation: header-nav-slide 1000ms ease-in;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 21px;
+
+      @include breakpoint("lg") {
+        margin-right: 57px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-family: $ff-secondary;
+    font-size: 0.79rem;
+    text-decoration: none;
+    color: $c-blue-very-dark;
+
+    @include breakpoint("sm") {
+      font-size: 0.85rem;
+    }
+
+    @include breakpoint("md") {
+      font-size: 1.01rem;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: -5px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $c-blue-very-dark;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 350ms ease-in;
+      }
+
+      &::after {
+        @extend #{$root}__link::before;
+        top: unset;
+        left: unset;
+        bottom: -5px;
+        right: 0;
+        transform-origin: right;
+      }
+
+      &:hover {
+        &::before {
+          transform: scaleX(1);
+          transform-origin: right;
+        }
+
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+}

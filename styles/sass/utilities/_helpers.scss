@@ -1,0 +1,72 @@
+.h {
+  color: $c-blue-very-dark;
+
+  &--xlg {
+    font-size: 1.57rem;
+    line-height: 1.4;
+
+    @include breakpoint("md") {
+      font-size: 1.8rem;
+    }
+
+    @include breakpoint("lg") {
+      font-size: 2.5rem;
+    }
+  }
+
+  &--lg {
+    font-size: 1.02rem;
+    line-height: 1.4;
+
+    @include breakpoint("md") {
+      font-size: 1.4rem;
+    }
+
+    @include breakpoint("lg") {
+      font-size: 2.5rem;
+    }
+  }
+
+  &--md {
+    font-size: 1.1rem;
+
+    @include breakpoint("md") {
+      font-size: 1.8rem;
+    }
+
+    @include breakpoint("lg") {
+      font-size: 2rem;
+    }
+  }
+
+  &--white {
+    color: #fff;
+  }
+}
+
+.text {
+  color: $c-blue-very-dark;
+
+  &--big {
+    font-size: 0.88rem;
+    line-height: 1.5;
+
+    @include breakpoint("lg") {
+      font-size: 1.13rem;
+      line-height: 1.4;
+    }
+  }
+
+  &--md {
+    font-size: 0.89rem;
+    line-height: 1.5;
+
+    @include breakpoint("lg") {
+      font-size: 1rem;
+    }
+  }
+
+  &--white {
+    color: #fff;
+  }
+}
